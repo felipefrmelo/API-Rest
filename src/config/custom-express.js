@@ -11,6 +11,7 @@ app.use(bodyParser.json())
 consign({cwd: 'src'})
     .include('controllers')
     .then('persistencia')
+    .then('service')
     .into(app);
 
 module.exports = app;

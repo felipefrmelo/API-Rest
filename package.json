@@ -27,6 +27,8 @@
     "express": "^4.17.1",
     "express-validator": "^6.1.0",
     "mysql": "^2.17.1",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "restify-clients": "^2.6.6",
+    "soap": "^0.28.0"
   }
 }
