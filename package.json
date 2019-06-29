@@ -1,0 +1,32 @@
+{
+  "name": "payfast",
+  "version": "1.0.0",
+  "description": "api para pagamentos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipefrmelo/API-seguindo-o-estilo-Rest.git"
+  },
+  "keywords": [
+    "api",
+    "pagamentos"
+  ],
+  "author": "Felipe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipefrmelo/API-seguindo-o-estilo-Rest/issues"
+  },
+  "homepage": "https://github.com/felipefrmelo/API-seguindo-o-estilo-Rest#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "consign": "^0.1.6",
+    "express": "^4.17.1",
+    "express-validator": "^6.1.0",
+    "mysql": "^2.17.1",
+    "nodemon": "^1.19.1"
+  }
+}
