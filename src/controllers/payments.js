@@ -31,7 +31,7 @@ module.exports = (app) => {
             return;
           }
           console.log('pagamento encontrado: ' + JSON.stringify(resultado));
-          res.json(resultado);
+          res.json(resultado.rows);
           return;
         });
         //HIT no cache
