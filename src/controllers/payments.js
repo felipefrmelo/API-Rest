@@ -15,31 +15,18 @@ module.exports = (app) => {
     var id = req.params.id;
     console.log('consultando pagamento: ' + id);
 
-    var memcachedClient = app.service.memcachedClient();
+    var connection = app.persistencia.connectionFactory();
+    var pagamentoDao = new app.persistencia.PagamentoDao(connection);
 
-    memcachedClient.get('pagamento-' + id, function (erro, retorno) {
-      if (erro || !retorno) {
-        console.log('MISS - chave nao encontrada');
-
-        var connection = app.persistencia.connectionFactory();
-        var pagamentoDao = new app.persistencia.PagamentoDao(connection);
-
-        pagamentoDao.buscaPorId(id, function (erro, resultado) {
-          if (erro) {
-            console.log('erro ao consultar no banco: ' + erro);
-            res.status(500).send(erro);
-            return;
-          }
-          console.log('pagamento encontrado: ' + JSON.stringify(resultado));
-          res.json(resultado.rows);
-          return;
-        });
-        //HIT no cache
-      } else {
-        console.log('HIT - valor: ' + JSON.stringify(retorno));
-        res.json(retorno);
+    pagamentoDao.buscaPorId(id, function (erro, resultado) {
+      if (erro) {
+        console.log('erro ao consultar no banco: ' + erro);
+        res.status(500).send(erro);
         return;
       }
+      console.log('pagamento encontrado: ' + JSON.stringify(resultado));
+      res.json(resultado.rows);
+      return;
     });
   });
 
