@@ -1,4 +1,3 @@
 # API-Rest
 
-Publicado no Heroku 
-
+Deploy no Heroku 
