@@ -30,11 +30,12 @@
     "morgan": "^1.9.1",
     "mysql": "^2.17.1",
     "nodemon": "^1.19.1",
+    "pg": "^7.11.0",
     "restify-clients": "^2.6.6",
     "soap": "^0.28.0",
     "winston": "^3.2.1"
   },
-  "engine":{
-    "node":"10.15.2"
+  "engine": {
+    "node": "10.15.2"
   }
 }
