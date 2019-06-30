@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "706bfe35-d8a6-988f-5e68-57d4545f473e",
+		"name": "node api rest ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pagamentos",
+			"item": [
+				{
+					"name": "{{BASE_URL}}:{{PORT}}/pagamentos/pagamento",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/pagamentos/pagamento/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"pagamentos",
+								"pagamento",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pagamento payfast",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pagamento\": {\n        \"forma_de_pagamento\": \"payfast\",\n        \"valor\": \"10.87\",\n        \"moeda\": \"BRL\",\n        \"descricao\": \"descrição do pagamento\"\n    }\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/pagamentos/pagamento",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"pagamentos",
+								"pagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{BASE_URL}}:{{PORT}}/pagamentos/pagamento/4",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/pagamentos/pagamento/4",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"pagamentos",
+								"pagamento",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pagamento cartao",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"pagamento\": {\n          \"forma_de_pagamento\": \"cartao\",\n          \"valor\": \"10.87\",\n          \"moeda\": \"BRL\",\n          \"descricao\": \"descrição do pagamento\"  \n        },\n\n        \"cartao\": {\n          \"numero\": \"1234567890123456\",\n          \"bandeira\": \"VISA\",\n          \"ano_de_expiracao\": \"2020\",\n          \"mes_de_expiracao\": \"12\",\n          \"cvv\": \"121\"\n        }\n      }"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/pagamentos/pagamento",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"pagamentos",
+								"pagamento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{BASE_URL}}:{{PORT}}/pagamentos/pagamento/3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/pagamentos/pagamento/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"pagamentos",
+								"pagamento",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cartoes",
+			"item": [
+				{
+					"name": "{{BASE_URL}}:{{PORT1}}/cartoes/autoriza",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"numero\":1234123412341234,\n  \"bandeira\":\"visa\",\n  \"ano_de_expiracao\":2016,\n  \"mes_de_expiracao\":12,\n  \"cvv\":123\n}\n"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT1}}/cartoes/autoriza",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT1}}",
+							"path": [
+								"cartoes",
+								"autoriza"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "correios",
+			"item": [
+				{
+					"name": "{{BASE_URL}}:{{PORT}}/correios/calculo-prazo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nCdServico\": \"40010\",\n    \"sCepOrigem\": \"14406671\",\n    \"sCepDestino\": \"38408170\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/correios/calculo-prazo",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"correios",
+								"calculo-prazo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "upload",
+			"item": [
+				{
+					"name": "{{BASE_URL}}:{{PORT}}/upload/imagem",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nCdServico\": \"40010\",\n    \"sCepOrigem\": \"14406671\",\n    \"sCepDestino\": \"38408170\"\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}:{{PORT}}/upload/imagem",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"upload",
+								"imagem"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
