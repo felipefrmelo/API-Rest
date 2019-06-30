@@ -1,5 +1,7 @@
 var app = require('./config/custom-express')();
 
-app.listen(3001, function(){
-  console.log('Servidor de cartoes rodando na porta 3001.');
+const PORT = process.env.PORT || 3001
+
+app.listen(PORT, function(){
+  console.log('Servidor de cartoes rodando na porta %d.', PORT);
 });
