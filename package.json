@@ -33,5 +33,8 @@
     "restify-clients": "^2.6.6",
     "soap": "^0.28.0",
     "winston": "^3.2.1"
+  },
+  "engine":{
+    "node":"10.15.2"
   }
 }
