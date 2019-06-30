@@ -59,10 +59,6 @@ module.exports = (app) => {
         pagamento.id = result.insertId;
         console.log('pagamento criado');
 
-        const cache = app.service.memcachedClient();
-        cache.set('pagamento-' + pagamento.id, pagamento, 1000, function (err) {
-          console.log('nova chave: pagamento-' + pagamento.id)
-        });
 
         if (pagamento.forma_de_pagamento == 'cartao') {
           const cartao = req.body["cartao"];
